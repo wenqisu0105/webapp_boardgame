@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Board</title>
+    <style>
+
+        h1 {
+            text-align: center; /* This centers the text within the h1 element */
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <h1 >Colonial Battle</h1>
+    <div id="board" class="board"></div>
+    <script src="/static/main.js"></script>
+    
+    
+    <div class="controls">
+        <form id="userInputForm">
+            <label for="x">X (0-4): </label>
+            <input type="number" id="x" min="0" max="4" required>
+            <label for="y">Y (0-4): </label>
+            <input type="number" id="y" min="0" max="4" required>
+            <label for="pos">Wall </label>
+            <select id="pos" required>
+                <option value="top">Top</option>
+                <option value="bottom">Bottom</option>
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
