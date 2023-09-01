@@ -4,12 +4,14 @@ from copy import deepcopy
 from random import choice
 import numpy as np
 from math import sqrt,log
+import logging
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 class SmartAgent():
     
     def __init__(self):
-        self.autoplay=True
         self.dir_map = {
             "u": 0,
             "r": 1,
@@ -19,6 +21,7 @@ class SmartAgent():
 
     def step(self, chess_board, my_pos, adv_pos, max_step):
         start=time()
+        
         root = MCTtree(board=chess_board, action=(0,0,0), my_pos=my_pos, adv_pos=adv_pos, max_step=max_step, parent=None)
         root.add_p_actions(my_pos, adv_pos)
         return root.best_move(start)
